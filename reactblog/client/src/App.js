@@ -1,15 +1,14 @@
   
 import React from 'react';
-// import { BrowserRouter, Route, Switch } from 'react-router-dom';
-// import Navbar from './components/Navbar';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Navbar from './components/Navbar';
 
 //IMPORT PAGES
-// import Home  from './pages/Home';
+import Home  from './pages/Home';
 // import About  from './pages/About';
-// import Dashboard from './pages/Dashboard/Dashboard';
-// import LoginSignUp  from './pages/LoginSignUp';
+import Dashboard from './pages/Dashboard';
+import LoginSignUp  from './pages/LoginSignUp';
 import { setContext } from '@apollo/client/link/context';
-import Signup from "./components/Signup";
 
 
 import {
@@ -45,7 +44,17 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Signup/>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <div>
+        <Navbar />
+        <hr style={{marginInline:'5vw'}}></hr>
+        <Switch>
+          <Route path='/' exact component={Home} />
+          <Route path='/Dashboard' component={Dashboard} />
+          <Route path='/LoginSignUp' component={LoginSignUp} />
+        </Switch>
+      </div>
+      </BrowserRouter>
     </ApolloProvider>
     
   );
