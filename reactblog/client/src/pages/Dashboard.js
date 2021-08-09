@@ -2,7 +2,9 @@ function Dashboard() {
 
 
     return (
-        <h1>in this</h1>    
+        <div>
+            <button>New Post</button> 
+        </div>
     )
 
 }
