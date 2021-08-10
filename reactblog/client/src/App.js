@@ -9,7 +9,7 @@ import Home  from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import LoginSignUp  from './pages/LoginSignUp';
 import { setContext } from '@apollo/client/link/context';
-
+import NewPost from './pages/NewPost'
 
 import {
   ApolloClient,
@@ -47,11 +47,12 @@ function App() {
       <BrowserRouter basename={process.env.PUBLIC_URL}>
       <div>
         <Navbar />
-        <hr style={{marginInline:'5vw'}}></hr>
         <Switch>
           <Route path='/' exact component={Home} />
           <Route path='/Dashboard' component={Dashboard} />
           <Route path='/LoginSignUp' component={LoginSignUp} />
+          <Route path = '/NewPost' component = {NewPost}/>
+
         </Switch>
       </div>
       </BrowserRouter>
