@@ -17,19 +17,12 @@ const postSchema = new Schema({
     type: String,
     required: true,
   },
-  date_Created: {type: String, "default": moment.tz(Date.now(), "America/New_York")}
+  date_Created: {type: Date, "default": moment.tz(Date.now(), "America/New_York")}
   
   
 });
 
-postSchema.pre('save', function(next){
-  now = new Date();
-  this.updated_at = now;
-  if ( !this.created_at ) {
-    this.created_at = now;
-  }
-  next();
-});
+
 
 
 

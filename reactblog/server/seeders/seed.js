@@ -12,7 +12,7 @@ db.once('open', async () => {
         {
             title: 'Pizza',
             content: 'is amazing and the most popular food',
-            date_Created: dateUsa
+            
         }
   )
 

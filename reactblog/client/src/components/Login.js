@@ -7,11 +7,13 @@ import { LOGIN_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
 const Login = () => {
+
     const [loginState, setloginState] = useState({ userName: '', password: '' });
     const [login, { loginError, logindata }] = useMutation(LOGIN_USER);
 
   // update state based on form input changes
   const LoginChange = (event) => {
+    console.log("---------------")
     const { name, value } = event.target;
 
     setloginState({
@@ -23,15 +25,14 @@ const Login = () => {
   // submit form
   const LoginSubmit = async (event) => {
     event.preventDefault();
-    
+    console.log("---------------------------")
 
     try {
-        const { data } = await login({
+        const  {data}  = await login({
             variables: { ...loginState },
-          });   
+          });  
         Auth.login(data.login.token);
     } catch (e) {
-      console.log("++++++++++++++++++++++++++++++++++++++++++++======")
       console.error(e);
     }
   };
@@ -57,7 +58,7 @@ const Login = () => {
                     type="submit"
                     onClick = {LoginSubmit}
                 >
-                    Submit
+                    Start
                 </button>
 
                 
