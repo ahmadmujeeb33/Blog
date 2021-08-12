@@ -23,3 +23,20 @@ export const ADD_USER = gql`
     }
 `;
 
+export const ADD_POST = gql`
+
+mutation addPost ($title: String, $content: String, $userId: ID,$date_Created: String){
+  addPost(title:$title, content:$content,userId: $userId,date_Created:$date_Created){
+  	_id
+    totalPosts{
+      _id
+      title
+      content
+      date_Created
+    }
+    
+  }
+}
+
+`;
+
