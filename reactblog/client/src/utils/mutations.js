@@ -33,8 +33,7 @@ mutation addPost ($title: String, $content: String, $userId: ID,$date_Created: S
       title
       content
       date_Created
-    }
-    
+    }  
   }
 }
 

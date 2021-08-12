@@ -11,19 +11,18 @@ const postSchema = new Schema({
   title: {
     type: String,
     required: true,
-    trim: true
+    trim: true,
+    sparse:true
   },  
   content: {
     type: String,
     required: true,
+    sparse:true
   },
-  date_Created: {type: Date, "default": moment.tz(Date.now(), "America/New_York")}
+  date_Created: {type: String, required: true, sparse:true }
   
   
 });
-
-
-
 
 
 const Post = mongoose.model('Post', postSchema);

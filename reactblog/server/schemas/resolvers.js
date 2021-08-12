@@ -17,7 +17,10 @@ const resolvers = {
           return User.findOne({ _id: userId });
         },
         me: async (parent, args, context) => {
+          console.log("----------------")
+          console.log(context.user)
           if (context.user) {
+            console.log("in thisss")
             return User.findOne({ _id: context.user._id });
           }
           throw new AuthenticationError('You need to be logged in!');
@@ -60,6 +63,8 @@ const resolvers = {
           console.log("content " + content);
           console.log("userId " + userId);
           console.log("date_Created " + date_Created);
+
+          console.log("-------------------")
 
           const postData = await Post.create({title,content,date_Created});
 

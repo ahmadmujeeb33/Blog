@@ -21,6 +21,7 @@
     "graphql": "^15.5.1",
     "jsonwebtoken": "^8.5.1",
     "moment-timezone": "^0.5.33",
+    "react-moment": "^1.1.1",
     "react-router-dom": "^5.2.0"
   }
 }

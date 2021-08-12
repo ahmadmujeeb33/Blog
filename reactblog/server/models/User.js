@@ -7,17 +7,20 @@ const userSchema = new Schema({
   userName: {
     type: String,
     required: true,
-    trim: true
+    trim: true,
+    sparse:true
   },
   email: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
+    sparse:true
   },
   password: {
     type: String,
     required: true,
-    minlength: 5
+    minlength: 5,
+    sparse:true
   },
 
   posts: [

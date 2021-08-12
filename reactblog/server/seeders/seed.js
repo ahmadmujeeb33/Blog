@@ -4,6 +4,10 @@ const db = require('../config/connection');
 
 const { User, Post} = require('../models');
 
+
+var today = moment();
+const todayDate = today.format("MMM Do, YYYY")
+
 db.once('open', async () => {
 
   await Post.deleteMany();
@@ -12,7 +16,8 @@ db.once('open', async () => {
         {
             title: 'Pizza',
             content: 'is amazing and the most popular food',
-            
+            date_Created: todayDate
+
         }
   )
 
@@ -23,7 +28,7 @@ db.once('open', async () => {
     userName: 'Pamela',
     email: 'pamela@testmail.com',
     password: 'password12345',
-    posts: [allPosts[0]._id]
+    posts: [{_id: allPosts[0]._id, title: allPosts[0].title, content: allPosts[0].content}]
   });
   console.log('users seeded');
 
