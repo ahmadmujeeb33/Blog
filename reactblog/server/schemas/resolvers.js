@@ -1,31 +1,13 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { User, Post } = require('../models');
+const db = require('../models');
 const { signToken } = require('../utils/auth');
 const bcrypt = require('bcrypt');
 const {GraphQLScalarType, Kind} = require('graphql')
 
-const dateScalar = new GraphQLScalarType({
-  name: 'Date',
-  description: 'Date custom scalar type',
-  serialize(value) {
-    return value.getTime(); // Convert outgoing Date to integer for JSON
-  },
-  parseValue(value) {
-    return new Date(value); // Convert incoming integer to Date
-  },
-  parseLiteral(ast) {
-    if (ast.kind === Kind.INT) {
-      return new Date(parseInt(ast.value, 10)); // Convert hard-coded AST string to integer and then to Date
-    }
-    return null; // Invalid hard-coded value (not an integer)
-  },
-});
-
 
 const resolvers = {
-    Date: dateScalar,
-
-
+  
     Query: {
         users: async () => {
           return User.find();
@@ -70,10 +52,32 @@ const resolvers = {
           return { token, user };
         },
 
-        // addPost: async (parent, { title, content}) => {
-        //   const post = await Post.create({ title, content});
-        //   return post;
-        // },
+        addPost: async (parent, { title, content,userId,date_Created}) => {
+
+          console.log("in here");
+
+          console.log("title " + title);
+          console.log("content " + content);
+          console.log("userId " + userId);
+          console.log("date_Created " + date_Created);
+
+          const postData = await Post.create({title,content,date_Created});
+
+          console.log(postData);
+
+          await User.findOneAndUpdate(
+            { _id: userId },
+            {
+              $push: { posts: postData._id},
+            },
+            {
+              new: true,
+              runValidators: true,
+            }
+
+           )
+
+        },
           
           
       }
