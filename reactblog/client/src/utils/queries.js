@@ -13,8 +13,8 @@ export const QUERY_USERS = gql`
 `;
 
 export const QUERY_SINGLE_USERS = gql`
-  query singleUser($userId: ID!) {
-    user(userId: $userId) {
+  query singleUser($_id: ID!) {
+    user(_id: $_id) {
       userName
       email
       password
@@ -29,6 +29,13 @@ export const QUERY_ME = gql`
       userName
       email
       password
+      posts{
+        _id
+        title
+        content
+        date_Created
+      }  
+
     }
   }
 `;

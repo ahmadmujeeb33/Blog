@@ -7,11 +7,11 @@ const typeDefs = gql`
     userName: String
     email: String
     password: String
-    totalPosts: [Post]
+    posts: [Post]
   }
 
   type Post{
-    _id: ID!
+    _id: ID
     title: String
     content: String
     date_Created:String
@@ -23,14 +23,14 @@ const typeDefs = gql`
   }
   type Query {
     users: [User]
-    user(userId: ID!): User
+    user(_id: ID!): User
     me: User
   }
   
   type Mutation {
     addUser(userName: String!, email: String!, password:String!): Auth
     login(userName: String!, password: String!):Auth
-    addPost(title: String,content:String,userId: ID, date_Created:String):User 
+    addPost(title: String,content:String, _id: ID, date_Created:String):User 
   }
 `;
 

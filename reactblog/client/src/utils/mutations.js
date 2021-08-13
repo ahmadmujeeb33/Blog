@@ -25,11 +25,11 @@ export const ADD_USER = gql`
 
 export const ADD_POST = gql`
 
-mutation addPost ($title: String, $content: String, $userId: ID,$date_Created: String){
-  addPost(title:$title, content:$content,userId: $userId,date_Created:$date_Created){
+mutation addPost ($title: String, $content: String, $_id: ID,$date_Created: String){
+  addPost(title:$title, content:$content,_id: $_id,date_Created:$date_Created){
   	_id
-    totalPosts{
-      _id
+    posts{
+      postId
       title
       content
       date_Created

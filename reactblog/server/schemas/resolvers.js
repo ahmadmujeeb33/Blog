@@ -13,15 +13,16 @@ const resolvers = {
           return User.find();
         },
     
-        user: async (parent, { userId }) => {
-          return User.findOne({ _id: userId });
+        user: async (parent, { _id }) => {
+          return User.findOne({ _id: _id });
         },
         me: async (parent, args, context) => {
           console.log("----------------")
           console.log(context.user)
           if (context.user) {
             console.log("in thisss")
-            return User.findOne({ _id: context.user._id });
+            console.log("_id " + context.user._id)
+            return User.findOne({ _id: context.user._id }).populate('posts');
           }
           throw new AuthenticationError('You need to be logged in!');
         },
@@ -55,13 +56,13 @@ const resolvers = {
           return { token, user };
         },
 
-        addPost: async (parent, { title, content,userId,date_Created}) => {
+        addPost: async (parent, { title, content,_id,date_Created}) => {
 
           console.log("in here");
 
           console.log("title " + title);
           console.log("content " + content);
-          console.log("userId " + userId);
+          console.log("userId " + _id);
           console.log("date_Created " + date_Created);
 
           console.log("-------------------")
@@ -71,7 +72,7 @@ const resolvers = {
           console.log(postData);
 
           await User.findOneAndUpdate(
-            { _id: userId },
+            { _id: _id },
             {
               $push: { posts: postData._id},
             },

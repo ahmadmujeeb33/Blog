@@ -12,7 +12,7 @@ function NewPost() {
     const [postInfo, setPostInfo] = useState({title: '', content: ''})
 
     const { loading, error, data } = useQuery(QUERY_ME);
-
+    console.log("data1 " + data);
     let newData = data?.me || {}
     let id = newData._id;
     console.log("id " + id);
@@ -38,7 +38,7 @@ function NewPost() {
      
         try {
             const { data } = await addPost({
-              variables: { ...postInfo,userId:id, date_Created:todayDate},
+              variables: { ...postInfo,_id:id, date_Created:todayDate},
             });
             window.location.assign('/Dashboard');
 
