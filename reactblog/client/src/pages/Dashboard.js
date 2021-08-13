@@ -9,33 +9,38 @@ function Dashboard() {
     // let newData = data?.me || {}
     // console.log("newData " + data.me);
     // newData = data.me.posts;
-    console.log(data.me.posts)
+    // console.log(data.me.posts)
     // let newData = data[me][post];
     // console.log("newdata " + newData)
+    
     return (
         <div>
-            
-            {data.me.posts.map((currentData)=>{
-                return  <div>
-                            <p>{currentData.title}</p>
-                            <p>{currentData.content}</p>
-                            <p>{currentData.date_Created}</p>
-                        </div>
-               
+            {loading ? (
+            <div>Loading...</div>
+          ):(
+              <div>
+                {data.me.posts.map((currentData)=>{
+                    return  <div>
+                                <p>{currentData.title}</p>
+                                <p>{currentData.content}</p>
+                                <p>{currentData.date_Created}</p>
+                            </div>   
                 })}
 
 
-            {/* {data.me.posts.map(({content, date_Created, title}) => (
-                <div>
-                    <div>{content}</div>
-                    <div>{date_Created}</div>
-                    <div>{title}</div>
-                    <br></br>
-                </div>
-            ))}; */}
-           
-            {/* <p>{data.me.posts[0]}</p> */}
-            <button><Link to="/NewPost" className="btn btn-primary">Create Post</Link></button>
+                {/* {data.me.posts.map(({content, date_Created, title}) => (
+                    <div>
+                        <div>{content}</div>
+                        <div>{date_Created}</div>
+                        <div>{title}</div>
+                        <br></br>
+                    </div>
+                ))}; */}
+            
+                {/* <p>{data.me.posts[0]}</p> */}
+                <button><Link to="/NewPost" className="btn btn-primary">Create Post</Link></button>
+            </div>
+        )}
         </div>
     )
 
