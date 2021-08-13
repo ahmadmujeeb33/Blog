@@ -29,7 +29,7 @@ mutation addPost ($title: String, $content: String, $_id: ID,$date_Created: Stri
   addPost(title:$title, content:$content,_id: $_id,date_Created:$date_Created){
   	_id
     posts{
-      postId
+      _id
       title
       content
       date_Created

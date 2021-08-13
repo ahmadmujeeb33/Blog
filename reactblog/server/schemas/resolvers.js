@@ -65,7 +65,7 @@ const resolvers = {
           console.log("userId " + _id);
           console.log("date_Created " + date_Created);
 
-          console.log("-------------------")
+          console.log("+=+=+=++++====++==++==++==")
 
           const postData = await Post.create({title,content,date_Created});
 
