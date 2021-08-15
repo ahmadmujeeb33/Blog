@@ -115,7 +115,7 @@ const resolvers = {
         deletePost: async (parent, {_id}, context) =>{
 
           console.log("_id1 " + _id )
-          // const deleteData = await Post.deleteOne({_id:_id})
+          const deleteData = await Post.deleteOne({_id:_id})
           console.log("context.user" + context.user)
           console.log("----------------------")
           console.log("contezxt.fwuse " + context.user._id);

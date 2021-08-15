@@ -9,7 +9,8 @@ import Home  from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import LoginSignUp  from './pages/LoginSignUp';
 import { setContext } from '@apollo/client/link/context';
-import NewPost from './pages/NewPost'
+import NewPost from './pages/NewPost';
+import UpdateAndDelete from'./pages/UpdateAndDelete';
 
 import {
   ApolloClient,
@@ -52,6 +53,7 @@ function App() {
           <Route path='/Dashboard' component={Dashboard} />
           <Route path='/LoginSignUp' component={LoginSignUp} />
           <Route path = '/NewPost' component = {NewPost}/>
+          <Route path = '/UpdateAndDelete/:id' component = {UpdateAndDelete}/>
 
         </Switch>
       </div>

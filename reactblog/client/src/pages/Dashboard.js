@@ -3,6 +3,8 @@ import Edit from './NewPost'
 import {QUERY_ME} from '../utils/queries';
 import { useQuery, useMutation } from '@apollo/client';
 
+
+
 function Dashboard() {
 
     const { loading, error, data } = useQuery(QUERY_ME);
@@ -21,9 +23,12 @@ function Dashboard() {
               <div>
                 {data.me.posts.map((currentData)=>{
                     return  <div>
-                                <p>{currentData.title}</p>
-                                <p>{currentData.content}</p>
-                                <p>{currentData.date_Created}</p>
+                                <Link to={`/UpdateAndDelete/${currentData._id}`}>
+                                    <p>{currentData.title}</p>
+                                    <p>{currentData.content}</p>
+                                    <p>{currentData.date_Created}</p>
+                                </Link>
+                                <br></br>
                             </div>   
                 })}
 

@@ -39,3 +39,14 @@ mutation addPost ($title: String, $content: String, $_id: ID,$date_Created: Stri
 
 `;
 
+export const DELETE_POST = gql`
+
+  mutation( $_id: ID){
+    deletePost(_id: $_id){
+      _id
+      
+    }
+  }
+
+
+`
