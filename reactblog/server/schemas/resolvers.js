@@ -84,8 +84,51 @@ const resolvers = {
            )
 
         },
-          
-          
+
+        updatePost: async (parent, { title, content,_id,date_Created}) => {
+            console.log("------------------")
+
+            console.log("in here");
+
+            console.log("title " + title);
+            console.log("content " + content);
+            console.log("userId " + _id);
+            console.log("date_Created " + date_Created);
+
+
+            const updateData = await Post.findOneAndUpdate(
+              { _id: _id },
+              {
+                $set: {title: title, content:content, date_Created: date_Created},
+              },
+              {
+                new: true,
+                runValidators: true,
+              }
+            )
+            console.log("updateDate " + updateData)
+
+            return updateData
+
+        },
+
+        deletePost: async (parent, {_id}, context) =>{
+
+          console.log("_id1 " + _id )
+          // const deleteData = await Post.deleteOne({_id:_id})
+          console.log("context.user" + context.user)
+          console.log("----------------------")
+          console.log("contezxt.fwuse " + context.user._id);
+          await User.findByIdAndUpdate(
+
+            {_id:context.user._id},
+            {
+              $pull: {posts: _id}
+            },
+            { new: true }
+
+          )
+        }
       }
         
 }

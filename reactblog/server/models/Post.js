@@ -10,16 +10,16 @@ console.log(dateUsa);
 const postSchema = new Schema({
   title: {
     type: String,
-    required: true,
+    // required: true,
     trim: true,
     sparse:true
   },  
   content: {
     type: String,
-    required: true,
+    // required: true,
     sparse:true
   },
-  date_Created: {type: String, required: true, sparse:true }
+  date_Created: {type: String, sparse:true }
   
   
 });
