@@ -3,7 +3,7 @@ const { User, Post } = require('../models');
 const db = require('../models');
 const { signToken } = require('../utils/auth');
 const bcrypt = require('bcrypt');
-const {GraphQLScalarType, Kind} = require('graphql')
+const {GraphQLScalarType, Kind, PossibleTypeExtensionsRule} = require('graphql')
 
 
 const resolvers = {
@@ -26,6 +26,13 @@ const resolvers = {
           }
           throw new AuthenticationError('You need to be logged in!');
         },
+        post: async(parent, {_id}, context) =>{
+          console.log("+++++++++++++++++++++++++++++++++++++++++++++++")
+          console.log("_id " + _id);
+          const post =  await Post.findOne({_id: _id});
+          console.log("post " + post);
+          return post;
+        }
     
     },
 

@@ -47,6 +47,17 @@ export const DELETE_POST = gql`
       
     }
   }
+`
 
 
+export const UPDATE_POST = gql`
+  mutation($title: String, $content: String, $_id: ID,$date_Created: String){
+    updatePost(title:$title, content:$content,_id: $_id,date_Created:$date_Created){
+      _id
+      title
+      content
+      date_Created
+      
+    }
+  }
 `

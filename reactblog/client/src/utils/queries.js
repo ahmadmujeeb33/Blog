@@ -39,3 +39,13 @@ export const QUERY_ME = gql`
     }
   }
 `;
+
+export const QUERY_SINGLE_POST = gql`
+  query singlePost($_id: ID!) {
+    post(_id: $_id) {
+      title
+      content
+      date_Created
+    }
+  }
+`;
