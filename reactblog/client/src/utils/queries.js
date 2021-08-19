@@ -13,11 +13,9 @@ export const QUERY_USERS = gql`
 `;
 
 export const QUERY_SINGLE_USERS = gql`
-  query singleUser($_id: ID!) {
-    user(_id: $_id) {
+  query singleUser($userName: String!) {
+    user(userName: $userName) {
       userName
-      email
-      password
     }
   }
 `;
@@ -49,3 +47,5 @@ export const QUERY_SINGLE_POST = gql`
     }
   }
 `;
+
+

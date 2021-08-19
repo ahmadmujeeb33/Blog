@@ -13,8 +13,8 @@ const resolvers = {
           return User.find();
         },
     
-        user: async (parent, { _id }) => {
-          return User.findOne({ _id: _id });
+        user: async (parent, { userName }) => {
+          return User.findOne({ userName: userName });
         },
         me: async (parent, args, context) => {
           console.log("----------------")

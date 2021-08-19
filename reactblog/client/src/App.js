@@ -11,6 +11,7 @@ import LoginSignUp  from './pages/LoginSignUp';
 import { setContext } from '@apollo/client/link/context';
 import NewPost from './pages/NewPost';
 import UpdateAndDelete from'./pages/UpdateAndDelete';
+import Search from'./pages/Search';
 
 import {
   ApolloClient,
@@ -54,6 +55,7 @@ function App() {
           <Route path='/LoginSignUp' component={LoginSignUp} />
           <Route path = '/NewPost' component = {NewPost}/>
           <Route path = '/UpdateAndDelete/:id' component = {UpdateAndDelete}/>
+          <Route path = '/Search' component = {Search}/>
 
         </Switch>
       </div>

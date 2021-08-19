@@ -22,12 +22,14 @@ function TheNavbar() {
                 <div>
                     <Link  to="/">Home</Link>
                     <Link  to="/Dashboard">Dashboard</Link>
-                    <Link  to="" onClick={logout} >Logout</Link>
+                    <Link  to="/Search">Search</Link>
+                    <Link  to="" onClick={logout} >Logout</Link>                  
                 </div>
             ) : (
                 <div >
                     <Link  to="/">Home</Link>
                     <Link  to="/LoginSignUp">Dashboard</Link>
+                    <Link  to="/Search">Search</Link>
                     <Link  to="/LoginSignUp">Login</Link>
                 </div>
             )}      
