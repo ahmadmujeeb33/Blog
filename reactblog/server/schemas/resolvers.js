@@ -14,7 +14,9 @@ const resolvers = {
         },
     
         user: async (parent, { userName }) => {
-          return User.findOne({ userName: userName });
+          const userFound =  User.findOne({ userName: userName });
+          console.log("userfound " + userFound);
+          return userFound
         },
         me: async (parent, args, context) => {
           console.log("----------------")

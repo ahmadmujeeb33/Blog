@@ -1,5 +1,5 @@
-import { useQuery } from '@apollo/client';
-import React , {useState, useRef } from 'react';
+import { useQuery,  } from '@apollo/client';
+import React , {useState, useRef,useEffect } from 'react';
 import { QUERY_SINGLE_USERS } from '../utils/queries';
 
 function Search(){    
@@ -19,44 +19,41 @@ function Search(){
 
         // Update the document title using the browser API
     const { loading, error, data } = useQuery(QUERY_SINGLE_USERS, {
-        onCompleted: (data) => {
-            setUserInfo({
-                userName: userInfo.userName,
-            })
-        },
-
         variables: {userName:userInfo},
+        
     });
 
-    console.log("data " + data);
-    
-    if(data === undefined){
-        userFound.current = false
-    }
-    else{
-        userFound.current = true
-    }
+    useEffect(() => {
+        if (loading) return
+      
+        console.log("data2 " + data)
+        if (data === undefined) {
+          console.log("in here 1")
+          userFound.current = false
+        } else {
+          console.log("in here 2")
+          userFound.current = true
+        }
+      }, [loading])
 
     
-
     return (
         <div>
+            <p>Search for a user</p>
+            <input
+                name = "userName"
+                value = {userInfo.userName}
+                onChange = {userNameChange}
+               
+            ></input>
              {loading ? (
             <div>Loading...</div>
           ):(
             <div>
-                <p>Search for a user</p>
-                <input
-                    name = "userName"
-                    value = {userInfo.userName}
-                    onChange = {userNameChange}
-                
-                ></input>
-
-                    {userFound.current
-                        ? <h3>{data.user.userName}</h3>
-                        : <h3>No user found with current input</h3>
-                    }
+                {userFound.current
+                    ? <h3>{data.user.userName}</h3>
+                    : <h3>No user found with current input</h3>
+                }
                 
             </div>
 
