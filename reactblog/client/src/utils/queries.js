@@ -13,7 +13,7 @@ export const QUERY_USERS = gql`
 `;
 
 export const QUERY_SINGLE_USERS = gql`
-  query singleUser($userName: String!) {
+  query singleUser($userName: String) {
     user(userName: $userName) {
       userName
     }

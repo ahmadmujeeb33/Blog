@@ -9,6 +9,7 @@ function Search(){
 
 
     function userNameChange(event){
+        console.log("in userNameChange")
         const name = event.target.name;
         const value = event.target.value
         setUserInfo({
@@ -19,22 +20,29 @@ function Search(){
 
         // Update the document title using the browser API
     const { loading, error, data } = useQuery(QUERY_SINGLE_USERS, {
-        variables: {userName:userInfo},
+        variables: {userName:userInfo.userName},
         
     });
+    
 
-    useEffect(() => {
-        if (loading) return
-      
-        console.log("data2 " + data)
-        if (data === undefined) {
-          console.log("in here 1")
-          userFound.current = false
-        } else {
-          console.log("in here 2")
-          userFound.current = true
+    // useEffect(() => {
+        console.log("weeeeeeeeeeeeeeeeee")
+        if (loading) {
+            console.log("in thisssss13243545")
+           
         }
-      }, [loading])
+        else{
+            if (data.user === undefined || data.user === null) {
+                console.log("in here 1")
+                userFound.current = false
+              } else {
+                console.log("in here 2")
+                console.log(data.user.userName);
+                userFound.current = true;
+              }
+        }
+        
+    //   }, [loading])
 
     
     return (
@@ -51,7 +59,10 @@ function Search(){
           ):(
             <div>
                 {userFound.current
-                    ? <h3>{data.user.userName}</h3>
+                    ? <div>
+                        <h3>{data.user.userName}</h3>
+                      </div>
+                    
                     : <h3>No user found with current input</h3>
                 }
                 
