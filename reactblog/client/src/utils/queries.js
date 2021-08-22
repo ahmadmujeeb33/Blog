@@ -27,6 +27,7 @@ export const QUERY_ME = gql`
       userName
       email
       password
+      followers
       posts{
         _id
         title

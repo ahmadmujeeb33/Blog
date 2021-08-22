@@ -138,6 +138,24 @@ const resolvers = {
             { new: true }
 
           )
+        },
+
+        addFollower: async(parent,args) =>{
+          console.log("Args._id " + args._id);
+          console.log("followers " + args.follower);
+          const data1 = await User.findOneAndUpdate(
+            { _id: args._id },
+            {
+              $push: { followers: args.follower},
+            },
+            {
+              new: true,
+              runValidators: true,
+            }
+
+          )
+
+          console.log(data1);
         }
       }
         

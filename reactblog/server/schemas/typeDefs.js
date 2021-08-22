@@ -8,6 +8,7 @@ const typeDefs = gql`
     email: String
     password: String
     posts: [Post]
+    followers: [String]!
   }
 
   type Post{
@@ -34,6 +35,7 @@ const typeDefs = gql`
     addPost(title: String,content:String, _id: ID, date_Created:String):User 
     updatePost(title: String,content:String, _id: ID, date_Created:String):Post
     deletePost( _id: ID):Post
+    addFollower(_id: ID!, follower: String!):User
   }
 `;
 
