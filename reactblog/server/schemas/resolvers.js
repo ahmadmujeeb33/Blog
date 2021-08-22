@@ -143,7 +143,7 @@ const resolvers = {
         addFollower: async(parent,args) =>{
           console.log("Args._id " + args._id);
           console.log("followers " + args.follower);
-          const data1 = await User.findOneAndUpdate(
+          return await User.findOneAndUpdate(
             { _id: args._id },
             {
               $push: { followers: args.follower},
@@ -155,7 +155,7 @@ const resolvers = {
 
           )
 
-          console.log(data1);
+          
         }
       }
         

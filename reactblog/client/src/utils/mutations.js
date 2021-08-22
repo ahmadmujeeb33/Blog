@@ -61,3 +61,12 @@ export const UPDATE_POST = gql`
     }
   }
 `
+
+export const ADD_FOLLOWER = gql`
+  mutation addFollower ($follower: String!, $_id: ID!){
+    addFollower(follower:$follower, _id:$_id){
+      _id     
+    }
+  }
+
+`
