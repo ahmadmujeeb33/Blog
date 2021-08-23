@@ -13,6 +13,8 @@ import NewPost from './pages/NewPost';
 import UpdateAndDelete from'./pages/UpdateAndDelete';
 import Search from'./pages/Search';
 
+import Follower from'./pages/Follower';
+
 import {
   ApolloClient,
   InMemoryCache,
@@ -56,7 +58,7 @@ function App() {
           <Route path = '/NewPost' component = {NewPost}/>
           <Route path = '/UpdateAndDelete/:id' component = {UpdateAndDelete}/>
           <Route path = '/Search' component = {Search}/>
-
+          <Route path = '/Follower' component = {Follower}/>
         </Switch>
       </div>
       </BrowserRouter>
