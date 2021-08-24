@@ -28,10 +28,14 @@ db.once('open', async () => {
     userName: 'Pamela',
     email: 'pamela@testmail.com',
     password: 'password12345',
-    posts: [{_id: allPosts[0]._id, title: allPosts[0].title, content: allPosts[0].content}],
+    posts: [{_id: allPosts[0]._id}],
     followers: ['Mahmood']
   });
   console.log('users seeded');
 
   process.exit();
 });
+
+
+
+// title: allPosts[0].title, content: allPosts[0].content}

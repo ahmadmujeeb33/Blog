@@ -5,15 +5,9 @@ const { Schema } = mongoose;
 const moment = require('moment-timezone');
 const dateUsa = moment.tz(Date.now(), "America/New_York");
 
-console.log(dateUsa);
+// console.log(dateUsa);
 
-const postSchema = new Schema({
-  title: {
-    type: String,
-    // required: true,
-    trim: true,
-    sparse:true
-  },  
+const commentSchema = new Schema({
   content: {
     type: String,
     // required: true,
@@ -21,18 +15,12 @@ const postSchema = new Schema({
   },
   date_Created: {type: String, sparse:true },
 
-
-  comments: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Comment"
-    }
-  ],
+  
   
   
 });
 
 
-const Post = mongoose.model('Post', postSchema);
+const Comment = mongoose.model('Comment', commentSchema);
 
-module.exports = Post;
+module.exports = Comment;

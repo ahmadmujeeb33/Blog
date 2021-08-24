@@ -16,7 +16,15 @@ const typeDefs = gql`
     title: String
     content: String
     date_Created:String
+    comments: [Comment]
   }
+
+  type Comment{
+    _id: ID
+    content: String
+    date_Created:String
+  }
+
 
   type Auth {
     token: ID!
@@ -36,6 +44,7 @@ const typeDefs = gql`
     updatePost(title: String,content:String, _id: ID, date_Created:String):Post
     deletePost( _id: ID):Post
     addFollower(_id: ID!, follower: String!):User
+    addComment(_id: ID, content: String,date_Created:String):User
   }
 `;
 

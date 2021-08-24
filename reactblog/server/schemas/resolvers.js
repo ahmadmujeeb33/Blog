@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Post } = require('../models');
+const { User, Post, Comment } = require('../models');
 const db = require('../models');
 const { signToken } = require('../utils/auth');
 const bcrypt = require('bcrypt');
@@ -157,7 +157,37 @@ const resolvers = {
           )
 
           
-        }
+        },
+
+
+        addComment: async (parent, {content,_id,date_Created}) => {
+
+          console.log("in here");
+
+          // console.log("title " + title);
+          console.log("content " + content);
+          console.log("userId " + _id);
+          console.log("date_Created " + date_Created);
+
+          console.log("+=+=+=++++====++==++==++==")
+
+          const commentData = await Comment.create({content,date_Created});
+
+          console.log(commentData);
+
+          await Post.findOneAndUpdate(
+            { _id: _id },
+            {
+              $push: { comments: commentData._id},
+            },
+            {
+              new: true,
+              runValidators: true,
+            }
+
+           )
+
+        },
       }
         
 }
