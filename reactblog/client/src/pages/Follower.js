@@ -1,12 +1,18 @@
 
 import {QUERY_ME} from '../utils/queries';
-import { useQuery, useMutation } from '@apollo/client';
+import { useQuery, useMutation, useLazyQuery  } from '@apollo/client';
+import { QUERY_SINGLE_USERS } from '../utils/queries';
+import Following from "../components/Following"
 
 function Follower(){
 
     const { loading, error, data } = useQuery(QUERY_ME);
+    let name = "";
+
+    const [user, { loading1, data1 }] = useLazyQuery(QUERY_SINGLE_USERS);
 
 
+    
     return (
         <div>
             Hello
@@ -16,12 +22,8 @@ function Follower(){
              ):(
                 <div>
                     {data.me.followers.map((follower)=>{
-
                     return  <div>
-                                {/* <Link to={`/Followers/${currentData._id}`}> */}
-                                    <p>{follower}</p>
-                                {/* </Link> */}
-                                <br></br>
+                               <Following userName = {follower} />                               
                             </div>   
                     })}
 

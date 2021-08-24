@@ -16,6 +16,7 @@ export const QUERY_SINGLE_USERS = gql`
   query singleUser($userName: String) {
     user(userName: $userName) {
       userName
+      _id
     }
   }
 `;

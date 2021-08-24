@@ -23,7 +23,7 @@ function TheNavbar() {
                     <Link  to="/">Home</Link>
                     <Link  to="/Dashboard">Dashboard</Link>
                     <Link  to="/Search">Search</Link>
-                    <Link  to="/Follower">Follower</Link>
+                    <Link  to="/Following">Following</Link>
                     <Link  to="" onClick={logout} >Logout</Link>                  
                 </div>
             ) : (

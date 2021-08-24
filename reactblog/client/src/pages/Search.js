@@ -22,14 +22,14 @@ function Search(){
         });
     }
 
-        // Update the document title using the browser API
+        
     const { loading, error, data } = useQuery(QUERY_SINGLE_USERS, {
         variables: {userName:userInfo.userName},
         
     });
     
 
-    // useEffect(() => {
+    
         console.log("weeeeeeeeeeeeeeeeee")
         if (loading) {
             console.log("in thisssss13243545")
