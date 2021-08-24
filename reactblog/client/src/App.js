@@ -60,7 +60,7 @@ function App() {
           <Route path = '/UpdateAndDelete/:id' component = {UpdateAndDelete}/>
           <Route path = '/Search' component = {Search}/>
           <Route path = '/Following' component = {Follower}/>
-          <Route path = '/CurentUser/:id' component = {ChosenUser}/>
+          <Route path = '/CurentUser/:userName' component = {ChosenUser}/>
         </Switch>
       </div>
       </BrowserRouter>

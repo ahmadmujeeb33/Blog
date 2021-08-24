@@ -19,7 +19,7 @@ function Following(props){
              ):(
                 <div>
                     <h2>{data._id}</h2>
-                    <Link to={`/CurentUser/${data.user._id}`}>
+                    <Link to={`/CurentUser/${data.user.userName}`}>
                         <p>{props.userName}</p>
                     </Link>
                 </div>

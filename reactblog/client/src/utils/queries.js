@@ -15,8 +15,17 @@ export const QUERY_USERS = gql`
 export const QUERY_SINGLE_USERS = gql`
   query singleUser($userName: String) {
     user(userName: $userName) {
-      userName
       _id
+      userName
+      email
+      password
+      followers
+      posts{
+        _id
+        title
+        content
+        date_Created
+      }  
     }
   }
 `;
