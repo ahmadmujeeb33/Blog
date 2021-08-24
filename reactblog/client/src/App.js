@@ -12,6 +12,7 @@ import { setContext } from '@apollo/client/link/context';
 import NewPost from './pages/NewPost';
 import UpdateAndDelete from'./pages/UpdateAndDelete';
 import Search from'./pages/Search';
+import ChosenUser from'./pages/ChosenUser';
 
 import Follower from'./pages/Follower';
 
@@ -59,6 +60,7 @@ function App() {
           <Route path = '/UpdateAndDelete/:id' component = {UpdateAndDelete}/>
           <Route path = '/Search' component = {Search}/>
           <Route path = '/Following' component = {Follower}/>
+          <Route path = '/CurentUser/:id' component = {ChosenUser}/>
         </Switch>
       </div>
       </BrowserRouter>

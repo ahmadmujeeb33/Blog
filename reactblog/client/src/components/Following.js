@@ -6,9 +6,11 @@ import {Link} from 'react-router-dom';
 function Following(props){
 
     const { loading, error, data } = useQuery(QUERY_SINGLE_USERS, {
-        variables: {userName:props.userName},
+        variables: {userName:props.userName.toString()},
         
     });
+
+    // console.log("data " + data._id);
   
     return (
         <div>
@@ -16,19 +18,14 @@ function Following(props){
                 <div>Loading...</div>
              ):(
                 <div>
-                    <Link to={`/Following/${data._id}`}>
+                    <h2>{data._id}</h2>
+                    <Link to={`/CurentUser/${data.user._id}`}>
                         <p>{props.userName}</p>
                     </Link>
                 </div>
              )}
-
-            <h1>help</h1>
         </div>
     )
-
-
-
-
 
 }
 
