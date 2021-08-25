@@ -33,8 +33,8 @@ const resolvers = {
         post: async(parent, {_id}, context) =>{
           console.log("+++++++++++++++++++++++++++++++++++++++++++++++")
           console.log("_id " + _id);
-          const post =  await Post.findOne({_id: _id});
-          console.log("post " + post);
+          const post =  await Post.findOne({_id: _id}).populate('comments');
+          console.log(post);
           return post;
         }
     

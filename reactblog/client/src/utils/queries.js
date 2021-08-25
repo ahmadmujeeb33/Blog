@@ -59,6 +59,7 @@ export const QUERY_SINGLE_POST = gql`
         _id
         content
         date_Created
+        userName
       }
     }
   }

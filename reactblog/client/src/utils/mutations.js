@@ -71,8 +71,8 @@ export const ADD_FOLLOWER = gql`
 `
 
 export const ADD_COMMENT = gql`
-  mutation addComment ( $content: String, $_id: ID,$date_Created: String){
-    addComment( content:$content,_id: $_id,date_Created:$date_Created){
+  mutation addComment ( $content: String, $_id: ID,$date_Created: String, $userName:String!){
+    addComment( content:$content,_id: $_id,date_Created:$date_Created,userName:$userName){
       comments{
 				_id
         content

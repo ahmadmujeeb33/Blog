@@ -45,7 +45,7 @@ const typeDefs = gql`
     updatePost(title: String,content:String, _id: ID, date_Created:String):Post
     deletePost( _id: ID):Post
     addFollower(_id: ID!, follower: String!):User
-    addComment(_id: ID, content: String,date_Created:String):Post
+    addComment(content: String, _id: ID, date_Created:String, userName:String):Post
   }
 `;
 
