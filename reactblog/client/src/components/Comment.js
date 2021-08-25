@@ -26,7 +26,7 @@ function Comment(props){
 
 
     const CommentButton = async (event) => {
-        event.preventDefault();
+        // event.preventDefault();
         console.log("---------------------------")
 
         const todayDate = today.format("MMM Do, YYYY")
@@ -49,6 +49,21 @@ function Comment(props){
                 <div>Loading...</div>
              ):(
                 <div>
+
+
+                    {props.allData.post.comments.map((currentData)=>{
+                        return  <div>
+                                    <p>{currentData.userName}</p>
+                                    <p>{currentData.content}</p>
+                                    <p>{currentData.date_Created}</p>
+
+                                
+                                    <br></br>
+                                </div>   
+                    })}
+
+
+
 
                     <input
                     name = "content"

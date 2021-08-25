@@ -55,6 +55,11 @@ export const QUERY_SINGLE_POST = gql`
       title
       content
       date_Created
+      comments{
+        _id
+        content
+        date_Created
+      }
     }
   }
 `;

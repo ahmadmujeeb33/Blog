@@ -27,7 +27,7 @@ function SpecificPost(){
                 <p>{data.post.content}</p>
                 <p>{data.post.date_Created}</p>
 
-                {<Comment postId = {id}/>}
+                {<Comment postId = {id} allData = {data}/>}
 
             </div>
 
