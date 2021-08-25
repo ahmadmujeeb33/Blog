@@ -68,5 +68,16 @@ export const ADD_FOLLOWER = gql`
       _id     
     }
   }
+`
 
+export const ADD_COMMENT = gql`
+  mutation addComment ( $content: String, $_id: ID,$date_Created: String){
+    addComment( content:$content,_id: $_id,date_Created:$date_Created){
+      comments{
+				_id
+        content
+        date_Created  
+      } 
+  }
+}
 `

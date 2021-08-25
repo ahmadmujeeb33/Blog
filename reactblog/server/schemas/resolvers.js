@@ -160,7 +160,7 @@ const resolvers = {
         },
 
 
-        addComment: async (parent, {content,_id,date_Created}) => {
+        addComment: async (parent, {content,_id,date_Created,userName}) => {
 
           console.log("in here");
 
@@ -171,11 +171,11 @@ const resolvers = {
 
           console.log("+=+=+=++++====++==++==++==")
 
-          const commentData = await Comment.create({content,date_Created});
+          const commentData = await Comment.create({content,date_Created,userName});
 
           console.log(commentData);
 
-          await Post.findOneAndUpdate(
+          const data = await Post.findOneAndUpdate(
             { _id: _id },
             {
               $push: { comments: commentData._id},
@@ -186,6 +186,8 @@ const resolvers = {
             }
 
            )
+
+          return data;
 
         },
       }

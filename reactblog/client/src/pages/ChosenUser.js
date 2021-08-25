@@ -1,7 +1,9 @@
 import { useParams} from 'react-router-dom';
 import { QUERY_SINGLE_USERS } from '../utils/queries';
 import { useQuery} from '@apollo/client'
+import { Link } from 'react-router-dom';
 
+import Comment from "../components/Comment"
 
 function ChosenUser(){
 
@@ -28,13 +30,18 @@ function ChosenUser(){
                 {data.user.posts.map((currentData)=>{
                     Thing(currentData)
                     return  <div>
-                                <p>{currentData.title}</p>
-                                <p>{currentData.content}</p>
-                                <p>{currentData.date_Created}</p>
+                                <Link to={`/Post/${currentData._id}`}>
+                                    <p>{currentData.title}</p>
+                                    <p>{currentData.content}</p>
+                                    <p>{currentData.date_Created}</p>
+
+                                </Link>
                             
                                 <br></br>
                             </div>   
                 })}
+
+                {/* <Comment/> */}
             </div>
 
              )}

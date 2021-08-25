@@ -14,7 +14,9 @@ import UpdateAndDelete from'./pages/UpdateAndDelete';
 import Search from'./pages/Search';
 import ChosenUser from'./pages/ChosenUser';
 
-import Follower from'./pages/Follower';
+import Follower from './pages/Follower';
+
+import SpecificPost from './pages/SpecificPost';
 
 import {
   ApolloClient,
@@ -61,6 +63,7 @@ function App() {
           <Route path = '/Search' component = {Search}/>
           <Route path = '/Following' component = {Follower}/>
           <Route path = '/CurentUser/:userName' component = {ChosenUser}/>
+          <Route path = '/Post/:id' component = {SpecificPost}/>
         </Switch>
       </div>
       </BrowserRouter>
