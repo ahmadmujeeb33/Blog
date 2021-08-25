@@ -6,6 +6,10 @@ import {Link, useParams} from 'react-router-dom';
 
 import Comment from "../components/Comment"
 
+
+
+
+
 function SpecificPost(){
 
     const {id} = useParams();
@@ -16,6 +20,7 @@ function SpecificPost(){
         variables: {_id:id},
     });
 
+ 
 
     function thing(currentData){
       console.log("props.allData " + data.post.title);
@@ -47,7 +52,9 @@ function SpecificPost(){
                                 </div>   
                   })}
 
-                {/* {<Comment postId = {id} allData = {data}/>} */}
+                {<Comment postId = {id} allData = {data}/>}
+
+              
 
             </div>
 

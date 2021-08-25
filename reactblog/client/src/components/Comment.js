@@ -12,7 +12,7 @@ function Comment(props){
 
     const [addComment, { error1, data1 }] = useMutation(ADD_COMMENT);
 
-    const [newCommentsCreated , setCommentsCreated] = useState(false);
+    // const [newCommentsCreated , setCommentsCreated] = useState(false);
 
     const { loading, error, data } = useQuery(QUERY_ME);
 
@@ -41,19 +41,19 @@ function Comment(props){
                 variables: {content: commentInfo.content, _id:props.postId, date_Created:todayDate, userName:data.me.userName},
               });  
 
-            setCommentsCreated(true);
+              window.location.assign(`/Post/${props.postId}`);
          
         } catch (e) {
           console.error(e);
         }
     };
 
-    function thing(currentData){
-        console.log("props.allData " + props.allData.post.title);
-        console.log("currentData.userName " + currentData.userName)
-        console.log("currentData.content " + currentData.content)
-        console.log("currentData.date_Created " + currentData.date_Created)
-    }
+    // function thing(currentData){
+    //     console.log("props.allData " + props.allData.post.title);
+    //     console.log("currentData.userName " + currentData.userName)
+    //     console.log("currentData.content " + currentData.content)
+    //     console.log("currentData.date_Created " + currentData.date_Created)
+    // }
 
 
     return (
@@ -62,23 +62,6 @@ function Comment(props){
                 <div>Loading...</div>
              ):(
                 <div>
-
-
-                    {props.allData.post.comments.map((currentData)=>{
-                        thing(currentData)
-                        return  <div>
-                                    <p>{currentData.userName}</p>
-                                    <p>{currentData.content}</p>
-                                    <p>{currentData.date_Created}</p>
-
-                                
-                                    <br></br>
-                                </div>   
-                    })}
-
-
-
-
                     <input
                     name = "content"
                     value = {commentInfo.content}
