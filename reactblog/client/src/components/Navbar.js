@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import Auth from '../utils/auth';
 import { QUERY_ME } from '../utils/queries';
 import { useQuery } from '@apollo/client';
-
+import '../styles/header.css';
 
 
 
@@ -20,19 +20,28 @@ function TheNavbar() {
         <div>
             {Auth.loggedIn() ? (
                 <div>
-                    <Link  to="/">Home</Link>
-                    <Link  to="/Dashboard">Dashboard</Link>
-                    <Link  to="/Search">Search</Link>
-                    <Link  to="/Following">Following</Link>
-                    <Link  to="" onClick={logout} >Logout</Link>                  
+                    <div className = "menu-bar">
+                        <div className = "menu-bar-items">
+                            <Link  to="/" style={{ textDecoration: 'none' }}>Home</Link>
+                            <Link  to="/Dashboard" style={{ textDecoration: 'none' }}>Dashboard</Link>
+                            <Link  to="/Search" style={{ textDecoration: 'none' }}>Search</Link>
+                            <Link  to="/Following" style={{ textDecoration: 'none' }}>Following</Link>
+                            <Link  to="" onClick={logout} style={{ textDecoration: 'none' }} >Logout</Link>   
+                        </div>
+                    </div>               
                 </div>
             ) : (
-                <div >
-                    <Link  to="/">Home</Link>
-                    <Link  to="/LoginSignUp">Dashboard</Link>
-                    <Link  to="/LoginSignUp">Search</Link>
-                    <Link  to="/LoginSignUp">Follower</Link>
-                    <Link  to="/LoginSignUp">Login</Link>
+                <div>
+                    <div className = "menu-bar">
+                        <div className = "menu-bar-items">
+                            <Link  to="/" style={{ textDecoration: 'none' }}>Home</Link>
+                            <Link  to="/LoginSignUp" style={{ textDecoration: 'none' }}>Dashboard</Link>
+                            <Link  to="/LoginSignUp" style={{ textDecoration: 'none' }}>Search</Link>
+                            <Link  to="/LoginSignUp" style={{ textDecoration: 'none' }}>Following</Link>
+                            <Link  to="/LoginSignUp" style={{ textDecoration: 'none' }}>Login</Link>
+
+                    </div>
+                        </div>
                 </div>
             )}      
                 

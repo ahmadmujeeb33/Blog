@@ -1,0 +1,15 @@
+.HomeContatiner{
+    background-color:#ade8f4;
+    min-height: 100vh;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.HomeContatiner p {
+    font-size: 300%;
+    font-weight: bold;
+    margin-top: 50px;
+    color:black;
+}

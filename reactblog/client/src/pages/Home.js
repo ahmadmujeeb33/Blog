@@ -1,8 +1,16 @@
+
+import '../styles/home.css';
+
+
 function Home() {
 
 
     return (
-        <h1>in this home</h1>    
+        <div>
+            <div className = "HomeContatiner">
+                    <p>Social Media Blog</p>  
+            </div>  
+        </div>
     )
 
 }

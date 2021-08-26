@@ -1,0 +1,20 @@
+.menu-bar{
+    /* background-image: linear-gradient(to bottom right,#B8F2E6,#FAF3DD,#FFA69E); */
+    height: 50px;
+    background-color:#4cc9f0;
+    padding: 0;
+    margin: 0;
+
+}
+
+.menu-bar-items{
+    display:flex;
+    gap:20px;
+    width:90%;
+    justify-content: flex-start;
+    text-decoration: none;
+}
+
+.menu-bar-items Link{
+    text-decoration: none;
+}
