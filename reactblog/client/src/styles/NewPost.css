@@ -1,0 +1,44 @@
+.NewPostContainer{
+    background-color: paleturquoise;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+
+}
+
+.NewPostItems{
+    /* background-color: pink; */
+    width: 50%;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    justify-content: center;
+    
+}
+
+.NewPostItems h3{
+    color: white;
+    height: 40px;
+    color: blue;
+    /* font-weight: bold; */
+    /* margin-left: 330px; */
+}
+
+.inputItems{
+    background-color:lightblue;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#ContentInput{
+    height: 60px;
+}
+
+.NewPostItems button{
+    margin-top: 30px;
+    background-color: lightcyan;
+    cursor: pointer;
+}

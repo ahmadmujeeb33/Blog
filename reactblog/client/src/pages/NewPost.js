@@ -1,3 +1,4 @@
+import '../styles/NewPost.css';
 import { useQuery, useMutation } from '@apollo/client';
 import React , {useState } from 'react';
 import { Link} from 'react-router-dom';
@@ -6,6 +7,8 @@ import {QUERY_ME} from '../utils/queries';
 
 import moment from 'moment'
 var today = moment();
+
+
 
 function NewPost() {
 
@@ -50,24 +53,32 @@ function NewPost() {
 
     return (
         <div>
-            <p>Post</p>
-            <input
-                name = "title"
-                value = {postInfo.Title}
-                onChange = {PostChange}
-            
-            ></input>
-            <p>Comment</p>
-            <input
-                name = "content"
-                value = {postInfo.Content}
-                onChange = {PostChange}
-            
-            ></input>
-            
-            <button onClick = {PostButton}><Link to="/NewPost" className="btn btn-primary">Create</Link></button>
+            <div className = "NewPostContainer">
+                <div className = "NewPostItems">
+                    <h3>Create New Post</h3>
+                    <div className = "inputItems">
+                        <p>Title</p>
+                        <input
+                            name = "title"
+                            value = {postInfo.Title}
+                            onChange = {PostChange}
+                        
+                        ></input>
+                        <p>Content</p>
+                        <input
+                            name = "content"
+                            value = {postInfo.Content}
+                            onChange = {PostChange}
+                            id = "ContentInput"
+                        
+                        ></input>
+                        
+                    </div>
+                    <button style={{ cursor: 'pointer' }} onClick = {PostButton}><Link style={{ textDecoration: 'none' }} to="/NewPost" className="btn btn-primary">Create</Link></button>
+                </div>
 
-            <p>Image</p>
+                
+            </div>
         </div>
     )
 
