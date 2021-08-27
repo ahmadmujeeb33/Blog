@@ -63,19 +63,19 @@ function Update(props){
             <div>
                 <div className = "inputAreas">
                     <p>Title</p>
-                    <input
+                    <textarea
                         name = "title"
                         value = {postInfo.title}
                         onChange ={PostChange}
                         id = "deleteInput"
-                    ></input>
+                    ></textarea>
                     <p>Content</p>
-                    <input
+                    <textarea
                         name = "content"
                         value = {postInfo.content}
                         onChange = {PostChange}
                         id = "contentInput"
-                    ></input>
+                    ></textarea>
                 </div>
 
                 <div className = "Buttons">
