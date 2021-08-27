@@ -3,6 +3,7 @@ import Edit from './NewPost'
 import {QUERY_ME} from '../utils/queries';
 import { useQuery, useMutation } from '@apollo/client';
 
+import '../styles/Dashboard.css';
 
 
 function Dashboard() {
@@ -16,34 +17,30 @@ function Dashboard() {
     // console.log("newdata " + newData)
     
     return (
-        <div>
+        <div className = "DashboardContainer">
             {loading ? (
             <div>Loading...</div>
           ):(
-              <div>
+            <div className = "FullContainer">
                 {data.me.posts.map((currentData)=>{
                     return  <div>
-                                <Link to={`/UpdateAndDelete/${currentData._id}`}>
-                                    <p>{currentData.title}</p>
-                                    <p>{currentData.content}</p>
-                                    <p>{currentData.date_Created}</p>
+                                <Link style={{ textDecoration: 'none' }} to={`/UpdateAndDelete/${currentData._id}`}>
+                                    <div className = "BlogContents">
+                                        <div className = "TitleContents">
+                                            <p>{currentData.title}</p>
+                                            <p>{currentData.date_Created}</p>
+                                        </div>
+                                            <div className = "BodyContents">
+                                                <p>{currentData.content}</p>
+                                            </div>
+                                            
+                                    </div>
+                                    
                                 </Link>
                                 <br></br>
                             </div>   
                 })}
-
-
-                {/* {data.me.posts.map(({content, date_Created, title}) => (
-                    <div>
-                        <div>{content}</div>
-                        <div>{date_Created}</div>
-                        <div>{title}</div>
-                        <br></br>
-                    </div>
-                ))}; */}
-            
-                {/* <p>{data.me.posts[0]}</p> */}
-                <button><Link to="/NewPost" className="btn btn-primary">Create Post</Link></button>
+                <button><Link style={{ textDecoration: 'none' }} to="/NewPost" className="btn btn-primary">Create Post</Link></button>
             </div>
         )}
         </div>
