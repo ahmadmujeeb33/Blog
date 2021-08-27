@@ -5,6 +5,7 @@ import Delete from "../components/Delete";
 import Update from "../components/Update";
 import { useParams} from 'react-router-dom';
 
+import '../styles/UpdateAndDelete.css';
 
 
 function UpdateAndDelete(){
@@ -16,17 +17,20 @@ function UpdateAndDelete(){
 
 
     return (
-        <div>
+        <div className = "Container">
+          <div className = "innerContainer">
             {loading ? (
             <div>Loading...</div>
           ):(
             <div>
                 <Update type = {id}/>
                 <Delete type = {id} />
+              
             </div>
-
+          
 
           )}
+          </div>
         </div>
     )
 

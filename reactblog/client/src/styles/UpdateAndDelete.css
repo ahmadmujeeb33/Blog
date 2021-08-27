@@ -1,0 +1,50 @@
+.inputAreas{
+    background-image: linear-gradient(#BEE1E6,#DFE7FD,#FAD2E1,#EAE4E9,#CDDAFD);
+    border-bottom:  0.2rem solid #FAD2E1;
+    font-size: 1.2rem;
+    text-align: center;
+    color: gray;
+    width: 100%;
+}
+
+.Container{
+    background-color:lightgray;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.innerContainer{
+    width: 100%;
+}
+
+.Update{
+    margin-top: 50px;
+    background-color:#247ba0ff;
+    width: 150px;
+    height: 30px;
+}
+
+.Buttons{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+
+}
+
+.Delete{
+    background-color: red;
+    width: 150px;
+    height: 30px;
+}
+
+#contentInput{
+    width: 70%;
+    height: 100px;
+}
+
+#deleteInput{
+    width: 70%;
+    height: 30px;
+}

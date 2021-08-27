@@ -4,6 +4,8 @@ import { useQuery, useMutation } from '@apollo/client';
 
 import { UPDATE_POST } from '../utils/mutations';
 
+import '../styles/UpdateAndDelete.css';
+
 import moment from 'moment'
 var today = moment();
 
@@ -59,21 +61,26 @@ function Update(props){
     return (
         <div>
             <div>
-                <p>Title</p>
-                <input
-                    name = "title"
-                    value = {postInfo.title}
-                    onChange ={PostChange}
-                ></input>
-                <p>Content</p>
-                <input
-                    name = "content"
-                    value = {postInfo.content}
-                    onChange = {PostChange}
-                
-                ></input>
+                <div className = "inputAreas">
+                    <p>Title</p>
+                    <input
+                        name = "title"
+                        value = {postInfo.title}
+                        onChange ={PostChange}
+                        id = "deleteInput"
+                    ></input>
+                    <p>Content</p>
+                    <input
+                        name = "content"
+                        value = {postInfo.content}
+                        onChange = {PostChange}
+                        id = "contentInput"
+                    ></input>
+                </div>
 
-                <button onClick = {PostButton}>Update</button>
+                <div className = "Buttons">
+                    <button className = "Update" onClick = {PostButton}>Update</button>
+                </div>
             </div>
         </div>
     )

@@ -22,12 +22,15 @@ function Delete(props){
 
     return (
         <div>
-            <button
-                onClick = {deleteEverything}
-                type="submit"
-            >
-            Delete
-            </button>
+            <div className = "Buttons">
+                <button
+                    onClick = {deleteEverything}
+                    type="submit"
+                    className = "Delete"
+                >
+                Delete
+                </button>
+            </div>
         </div>
     )
 }
