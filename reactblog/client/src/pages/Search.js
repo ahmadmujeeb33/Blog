@@ -4,6 +4,8 @@ import { QUERY_SINGLE_USERS } from '../utils/queries';
 
 import CheckFollowing from "../components/CheckFollowing";
 
+import '../styles/Search.css';
+
 function Search(){    
     const [userInfo, setUserInfo] = useState({userName: ''}) 
 
@@ -51,29 +53,35 @@ function Search(){
     
     return (
         <div>
-            <p>Search for a user</p>
-            <input
-                name = "userName"
-                value = {userInfo.userName}
-                onChange = {userNameChange}
-               
-            ></input>
-             {loading ? (
-            <div>Loading...</div>
-          ):(
-            <div>
-                {userFound.current
-                    ? <div>
-                        <h3>{data.user.userName}</h3>
-                        <CheckFollowing searchedUser = {data.user.userName}  />
-                      </div>
-                    
-                    : <h3>No user found with current input</h3>
-                }
+            <div className = "SearchContainer">
+                <div className = "SearchItems">
+                <p>Search for a user</p>
+                <input
+                    name = "userName"
+                    value = {userInfo.userName}
+                    onChange = {userNameChange}
                 
-            </div>
+                ></input>
+                {loading ? (
+                <div>Loading...</div>
+            ):(
+                <div>
+                    {userFound.current
+                        ? <div>
+                            <div className = "folowButtonContainer">
+                                <h3>{data.user.userName}</h3>
+                            </div>
+                            <CheckFollowing searchedUser = {data.user.userName}  />
+                        </div>
+                        
+                        :  <div className = "folowButtonContainer"><h3>No user found with current input</h3></div>
+                    }
+                    
+                </div>
 
-          )}
+            )}
+            </div>
+          </div>
 
         </div>
         

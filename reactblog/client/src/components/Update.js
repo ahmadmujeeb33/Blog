@@ -79,7 +79,7 @@ function Update(props){
                 </div>
 
                 <div className = "Buttons">
-                    <button className = "Update" onClick = {PostButton}>Update</button>
+                    <button style={{ cursor: 'pointer' }} className = "Update" onClick = {PostButton}>Update</button>
                 </div>
             </div>
         </div>

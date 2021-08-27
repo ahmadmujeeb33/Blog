@@ -48,13 +48,13 @@ function CheckFollowing(props){
         for(let i=0;i<data.me.followers.length;i++){
             console.log("in heree");
             if(data.me.followers[i] === props.searchedUser){
-                return <button>Following</button>
+                return <div className = "folowButtonContainer"><button className = "folowButton">Following</button></div>
                 
             }
         }
 
         if(currentStatus === ""){   
-            return <button onClick = {ToFollowing}>Follow</button>
+            return <div className = "folowButtonContainer"><button className = "folowButton" onClick = {ToFollowing}>Follow</button></div>
         
         }
 

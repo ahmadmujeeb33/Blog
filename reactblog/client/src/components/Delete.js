@@ -27,6 +27,7 @@ function Delete(props){
                     onClick = {deleteEverything}
                     type="submit"
                     className = "Delete"
+                    style={{ cursor: 'pointer' }}
                 >
                 Delete
                 </button>

@@ -1,0 +1,29 @@
+.SearchContainer{
+    background-color: lightyellow;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    align-items: center;
+
+}
+.SearchItems{
+    background-color: lightskyblue;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+}
+
+.SearchItems input{
+    height: 20px;
+}
+
+.folowButton{
+    background-color: lightskyblue;
+}
+
+.folowButtonContainer{
+    display: flex;
+    justify-content: center;
+}
