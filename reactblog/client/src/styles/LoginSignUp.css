@@ -1,0 +1,39 @@
+.loginContainer{
+    background-color: #cddafd;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.loginContainerItems{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    gap: 350px;
+}
+
+.inputContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.inputContainer input{
+    line-height: 2em;
+    width: 300px;
+    border-radius: 5px;
+}
+
+.inputContainer button{
+    height: 30px;
+    background-color: pink;
+    border: 2px solid black;
+ 
+}
+
+.inputContainer h4 {
+    font-size: 130%;
+    color: blueviolet;
+    font-weight: bold;
+}

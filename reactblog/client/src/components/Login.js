@@ -6,6 +6,8 @@ import { LOGIN_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
 
+import '../styles/LoginSignUp.css';
+
 const Login = () => {
 
     const [loginState, setloginState] = useState({ userName: '', password: '' });
@@ -37,29 +39,34 @@ const Login = () => {
     }
   };
 
-  return (
-        
+  return (     
             <div>
-                <input
-                    name="userName"
-                    type="text"
-                    value={loginState.userName}
-                    onChange={LoginChange}>
-                </input>
-                <input
-                    name="password"
-                    type="password"
-                    value={loginState.password}
-                    onChange={LoginChange}>
-                </input>
-                <button
-                    className="btn btn-block btn-info"
-                    style={{ cursor: 'pointer' }}
-                    type="submit"
-                    onClick = {LoginSubmit}
-                >
-                    Start
-                </button>
+                <div className = "inputContainer">
+                  <h4>Login</h4>
+                  <input
+                      name="userName"
+                      type="text"
+                      value={loginState.userName}
+                      onChange={LoginChange}
+                      placeholder = "Username">
+                  </input>
+                  <input
+                      name="password"
+                      type="password"
+                      value={loginState.password}
+                      onChange={LoginChange}
+                      placeholder = "Password">
+                  </input>
+                  <button
+                      className="btn btn-block btn-info"
+                      style={{ cursor: 'pointer' }}
+                      type="submit"
+                      onClick = {LoginSubmit}
+                  >
+                      Sign In
+                  </button>
+
+                </div>
 
                 
             

@@ -5,13 +5,20 @@ import Signup from '../components/Signup';
 
 import Auth from '../utils/auth';
 
+import '../styles/LoginSignUp.css';
+
+
 function LoginSignUp() {
 
 
     return (
         <div>
-            <Signup/>
-            <Login/>
+            <div className = "loginContainer">
+                <div className = "loginContainerItems">
+                    <Login/>
+                    <Signup/>
+                </div>
+            </div>
         </div>
             
     )

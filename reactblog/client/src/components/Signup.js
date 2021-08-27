@@ -5,6 +5,7 @@ import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
+import '../styles/LoginSignUp.css';
 
 const Signup = () => {
   const [formState, setFormState] = useState({
@@ -44,33 +45,41 @@ const Signup = () => {
   return (
         
             <div>
-                <input
-                    name="userName"
-                    type="text"
-                    value={formState.userName}
-                    onChange={SignUpChange}>
-                </input>
-                <input
-                    name="email"
-                    type="email"
-                    value={formState.email}
-                    onChange={SignUpChange}>
-                </input>
-                <input
-                    name="password"
-                    type="password"
-                    value={formState.password}
-                    onChange={SignUpChange}>
-                </input>
-                <button
-                    className="btn btn-block btn-info"
-                    style={{ cursor: 'pointer' }}
-                    type="submit"
-                    onClick = {SignUpSubmit}
-                >
-                    Submit
-                </button>
+                
+                <div className = "inputContainer">
+                  <h4>SignUp</h4>
+                  <input
+                      name="userName"
+                      type="text"
+                      value={formState.userName}
+                      onChange={SignUpChange}
+                      placeholder = "Username">
+                  </input>
+                  <input
+                      name="email"
+                      type="email"
+                      value={formState.email}
+                      onChange={SignUpChange}
+                      placeholder = "Email">
+                  </input>
+                  <input
+                      name="password"
+                      type="password"
+                      value={formState.password}
+                      onChange={SignUpChange}
+                      placeholder = "Password">
+                      
+                  </input>
+                  <button
+                      className="btn btn-block btn-info"
+                      style={{ cursor: 'pointer' }}
+                      type="submit"
+                      onClick = {SignUpSubmit}
+                  >
+                      Sign Up
+                  </button>
 
+                </div>
                 
             
             </div>
