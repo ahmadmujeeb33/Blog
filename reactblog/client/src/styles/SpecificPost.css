@@ -1,0 +1,33 @@
+.SpecificPostContainer{
+    background-color: #ece4db;
+    display: flex;
+    justify-content: center;
+}
+
+.FullContainer{
+    padding-top: 30px;
+    width: 60%;
+    min-height: 100vh;
+}
+
+.CommentContainer{
+    display: flex;
+    background-color: gray;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+.CommentInput{
+    margin-top: 30px;
+    width: 350px;
+}
+
+#CommentButton{
+    width: 130px;
+}
+
+.CommentInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

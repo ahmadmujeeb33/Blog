@@ -6,8 +6,7 @@ import {Link, useParams} from 'react-router-dom';
 
 import Comment from "../components/Comment"
 
-
-
+import '../styles/SpecificPost.css';
 
 
 function SpecificPost(){
@@ -32,23 +31,31 @@ function SpecificPost(){
 
 
     return (
-        <div>
+        <div className = "SpecificPostContainer">
              {loading ? (
             <div>Loading...</div>
           ):(
-            <div>
-                <p>{data.post.title}</p>
-                <p>{data.post.content}</p>
-                <p>{data.post.date_Created}</p>
+            <div className =  "FullContainer">
+                <div className = "BlogContents">
+                  <div className = "TitleContents">
+                    <p>{data.post.title}</p>
+                    <p>{data.post.date_Created}</p>
+                  </div>  
+                  <div className = "BodyContents">        
+                    <p>{data.post.content}</p>
+                  </div>
+                </div>
 
-
+                <h4>Comments</h4>
                 {data.post.comments.map((currentData)=>{
                         thing(currentData)
-                        return  <div>
-                                    <p>{currentData.userName}</p>
-                                    <p>{currentData.content}</p>
-                                    <p>{currentData.date_Created}</p>                          
-                                    <br></br>
+                        
+                        return   <div>
+                                    <div className = "CommentContainer">
+                                      <p>{currentData.content}</p>
+                                      <p> Posted By {currentData.userName} on {currentData.date_Created}</p>                     
+                                      <br></br>
+                                    </div>
                                 </div>   
                   })}
 

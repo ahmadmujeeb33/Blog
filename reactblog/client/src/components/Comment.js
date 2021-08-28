@@ -61,14 +61,16 @@ function Comment(props){
             {loading ? (
                 <div>Loading...</div>
              ):(
-                <div>
-                    <input
+                <div className = "CommentInfo">
+                    <textarea
                     name = "content"
                     value = {commentInfo.content}
-                    onChange = {CommentChange} ></input>
+                    onChange = {CommentChange} 
+                    className = "CommentInput"
+                    ></textarea>
                 
                     <button onClick = {CommentButton} type="submit"
-                    
+                        id = "CommentButton"
                     
                     >Add</button>
                     
