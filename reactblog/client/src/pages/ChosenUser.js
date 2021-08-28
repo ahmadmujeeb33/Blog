@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 
 import Comment from "../components/Comment"
 
+import '../styles/Dashboard.css';
+
 function ChosenUser(){
 
 
@@ -22,18 +24,25 @@ function ChosenUser(){
 
 
     return (
-        <div>
+        <div className = "DashboardContainer">
         {loading ? (
             <div>Loading...</div>
             ):(
-            <div>
+            <div className = "FullContainer">
                 {data.user.posts.map((currentData)=>{
                     Thing(currentData)
                     return  <div>
-                                <Link to={`/Post/${currentData._id}`}>
-                                    <p>{currentData.title}</p>
-                                    <p>{currentData.content}</p>
-                                    <p>{currentData.date_Created}</p>
+                                <Link style={{ textDecoration: 'none' }} to={`/Post/${currentData._id}`}>
+                                    <div className = "BlogContents">
+                                        <div className = "TitleContents">
+                                            <p>{currentData.title}</p>
+                                            <p>{currentData.content}</p>
+                                        </div>
+                                        <div className = "BodyContents">
+                                            <p>{currentData.date_Created}</p>
+                                        </div>
+
+                                    </div>
 
                                 </Link>
                             

@@ -4,6 +4,9 @@ import { useQuery, useMutation, useLazyQuery  } from '@apollo/client';
 import { QUERY_SINGLE_USERS } from '../utils/queries';
 import Following from "../components/Following"
 
+import '../styles/Following.css';
+
+
 function Follower(){
 
     const { loading, error, data } = useQuery(QUERY_ME);
@@ -14,22 +17,20 @@ function Follower(){
 
     
     return (
-        <div>
-            Hello
+        <div className = "FollowingContainer">
+                {loading ? (
+                    <div>Loading...</div>
+                ):(
+                    <div className = "FollowingContainerItems">
+                        {data.me.followers.map((follower)=>{
+                        return  <div>
+                                <Following userName = {follower} />                               
+                                </div>   
+                        })}
 
-            {loading ? (
-                <div>Loading...</div>
-             ):(
-                <div>
-                    {data.me.followers.map((follower)=>{
-                    return  <div>
-                               <Following userName = {follower} />                               
-                            </div>   
-                    })}
+                    </div>
 
-                </div>
-
-            )}
+                )}
         </div>
     )
 
