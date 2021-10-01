@@ -29,7 +29,15 @@ db.once('open', async () => {
     email: 'pamela@testmail.com',
     password: 'password12345',
     posts: [{_id: allPosts[0]._id}],
-    followers: ['Mahmood']
+    followers: ['Ahmad']
+  });
+
+  await User.create({
+    userName: 'Ahmad',
+    email: 'Ahmad@gmail.com',
+    password: 'password12345',
+    posts: [],
+    followers: []
   });
   console.log('users seeded');
 
