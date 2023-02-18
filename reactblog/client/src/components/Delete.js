@@ -15,8 +15,6 @@ function Delete(props){
             window.location.assign('/Dashboard');
 
           } catch (e) {
-            console.log("++++++++++++++++++++++++++++++++++++++++++++======")
-            console.error(e);
         }
     }
 
