@@ -11,7 +11,6 @@ var today = moment();
 
 function Update(props){
 
-    console.log(props.type)
     
     const { loading, error, data } = useQuery(QUERY_SINGLE_POST, {
         onCompleted: (data) => {
