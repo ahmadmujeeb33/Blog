@@ -12,7 +12,6 @@ function Comment(props){
 
     const [addComment, { error1, data1 }] = useMutation(ADD_COMMENT);
 
-    // const [newCommentsCreated , setCommentsCreated] = useState(false);
 
     const { loading, error, data } = useQuery(QUERY_ME);
 
