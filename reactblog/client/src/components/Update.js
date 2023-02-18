@@ -53,8 +53,6 @@ function Update(props){
             window.location.assign('/Dashboard');
 
           } catch (e) {
-            console.log("++++++++++++++++++++++++++++++++++++++++++++======")
-            console.error(e);
         }
 
     }
