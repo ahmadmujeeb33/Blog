@@ -2,8 +2,6 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-const moment = require('moment-timezone');
-
 
 const commentSchema = new Schema({
   content: {
