@@ -11,7 +11,6 @@ var today = moment();
 
 function Update(props){
 
-    console.log(props.type)
     
     const { loading, error, data } = useQuery(QUERY_SINGLE_POST, {
         onCompleted: (data) => {
@@ -44,7 +43,6 @@ function Update(props){
     async function PostButton(event){
 
         const todayDate = today.format("MMM Do, YYYY")
-        console.log("todayDate" + todayDate);
      
         try {
             const { data } = await updatePost({
@@ -53,7 +51,6 @@ function Update(props){
             window.location.assign('/Dashboard');
 
           } catch (e) {
-            console.log("++++++++++++++++++++++++++++++++++++++++++++======")
             console.error(e);
         }
 

@@ -15,7 +15,6 @@ const resolvers = {
     
         user: async (parent, { userName }) => {
           const userFound = await User.findOne({ userName: userName }).populate('posts');
-          console.log("userfound " + userFound);
           return userFound
         },
         me: async (parent, args, context) => {
@@ -87,7 +86,6 @@ const resolvers = {
                 runValidators: true,
               }
             )
-            console.log("updateDate " + updateData)
 
             return updateData
 
@@ -132,7 +130,6 @@ const resolvers = {
 
           const commentData = await Comment.create({content,date_Created,userName});
 
-          console.log(commentData);
 
           const data = await Post.findOneAndUpdate(
             { _id: _id },

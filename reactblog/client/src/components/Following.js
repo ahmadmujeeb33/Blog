@@ -10,7 +10,6 @@ function Following(props){
         
     });
 
-    // console.log("data " + data._id);
   
     return (
         <div>

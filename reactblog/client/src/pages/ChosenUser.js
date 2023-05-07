@@ -16,11 +16,8 @@ function ChosenUser(){
         variables: {userName:userName.toString()},
         
     });
-    console.log("in here " + data.user._id);
 
-    function Thing(currentData){
-        console.log("in here " + currentData.title )
-    }
+  
 
 
     return (
@@ -30,7 +27,6 @@ function ChosenUser(){
             ):(
             <div className = "FullContainer">
                 {data.user.posts.map((currentData)=>{
-                    Thing(currentData)
                     return  <div>
                                 <Link style={{ textDecoration: 'none' }} to={`/Post/${currentData._id}`}>
                                     <div className = "BlogContents">

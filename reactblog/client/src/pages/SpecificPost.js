@@ -21,12 +21,7 @@ function SpecificPost(){
 
  
 
-    function thing(currentData){
-      console.log("props.allData " + data.post.title);
-      console.log("currentData.userName " + currentData.userName)
-      console.log("currentData.content " + currentData.content)
-      console.log("currentData.date_Created " + currentData.date_Created)
-  }
+   
 
 
 
@@ -48,7 +43,6 @@ function SpecificPost(){
 
                 <h4>Comments</h4>
                 {data.post.comments.map((currentData)=>{
-                        thing(currentData)
                         
                         return   <div>
                                     <div className = "CommentContainer">

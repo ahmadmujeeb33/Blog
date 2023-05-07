@@ -15,7 +15,6 @@ const Login = () => {
 
   // update state based on form input changes
   const LoginChange = (event) => {
-    console.log("---------------")
     const { name, value } = event.target;
 
     setloginState({
@@ -27,7 +26,6 @@ const Login = () => {
   // submit form
   const LoginSubmit = async (event) => {
     event.preventDefault();
-    console.log("---------------------------")
 
     try {
         const  {data}  = await login({

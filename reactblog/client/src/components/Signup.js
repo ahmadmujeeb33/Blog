@@ -28,7 +28,6 @@ const Signup = () => {
   // submit form
   const SignUpSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
 
     try {
       const { data } = await addUser({
@@ -37,7 +36,6 @@ const Signup = () => {
 
       Auth.login(data.addUser.token);
     } catch (e) {
-      console.log("++++++++++++++++++++++++++++++++++++++++++++======")
       console.error(e);
     }
   };

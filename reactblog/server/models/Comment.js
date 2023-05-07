@@ -3,9 +3,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const moment = require('moment-timezone');
-const dateUsa = moment.tz(Date.now(), "America/New_York");
 
-// console.log(dateUsa);
 
 const commentSchema = new Schema({
   content: {

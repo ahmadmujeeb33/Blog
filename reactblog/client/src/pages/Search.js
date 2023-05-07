@@ -15,7 +15,6 @@ function Search(){
 
 
     function userNameChange(event){
-        console.log("in userNameChange")
         const name = event.target.name;
         const value = event.target.value
         setUserInfo({
@@ -32,9 +31,8 @@ function Search(){
     
 
     
-        console.log("weeeeeeeeeeeeeeeeee")
         if (loading) {
-            console.log("in thisssss13243545")
+            ;
            
         }
         else{
@@ -42,8 +40,6 @@ function Search(){
                 console.log("in here 1")
                 userFound.current = false
               } else {
-                console.log("in here 2")
-                console.log(data.user.userName);
                 userFound.current = true;
               }
         }

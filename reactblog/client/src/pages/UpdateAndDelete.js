@@ -12,7 +12,6 @@ function UpdateAndDelete(){
 
     const { loading, error, data } = useQuery(QUERY_ME);
     const { id } = useParams();
-    console.log(id);
     
 
 

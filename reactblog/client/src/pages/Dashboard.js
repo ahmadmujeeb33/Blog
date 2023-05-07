@@ -9,12 +9,7 @@ import '../styles/Dashboard.css';
 function Dashboard() {
 
     const { loading, error, data } = useQuery(QUERY_ME);
-    // let newData = data?.me || {}
-    // console.log("newData " + data.me);
-    // newData = data.me.posts;
-    // console.log(data.me.posts)
-    // let newData = data[me][post];
-    // console.log("newdata " + newData)
+    
     
     return (
         <div className = "DashboardContainer">

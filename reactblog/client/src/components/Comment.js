@@ -12,7 +12,6 @@ function Comment(props){
 
     const [addComment, { error1, data1 }] = useMutation(ADD_COMMENT);
 
-    // const [newCommentsCreated , setCommentsCreated] = useState(false);
 
     const { loading, error, data } = useQuery(QUERY_ME);
 
@@ -48,12 +47,7 @@ function Comment(props){
         }
     };
 
-    // function thing(currentData){
-    //     console.log("props.allData " + props.allData.post.title);
-    //     console.log("currentData.userName " + currentData.userName)
-    //     console.log("currentData.content " + currentData.content)
-    //     console.log("currentData.date_Created " + currentData.date_Created)
-    // }
+    
 
 
     return (

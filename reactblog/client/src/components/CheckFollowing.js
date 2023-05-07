@@ -23,14 +23,12 @@ function CheckFollowing(props){
     async function ToFollowing(event){
         event.preventDefault()
 
-        console.log("in thissss");
         
      
         const alldata = await addFollower({
             variables: {_id:data.me._id, follower: props.searchedUser},
         });
 
-        console.log("alldata.data " + alldata.data);
 
         
         FindFollowing()
@@ -42,24 +40,19 @@ function CheckFollowing(props){
 
 
     function FindFollowing(){
-        console.log("thiaosdifbbjkxzlvxnckvj ");
-        let listOfFollowers = []
-        console.log("data.me.followers.length  "  + data.me.followers.length);
         for(let i=0;i<data.me.followers.length;i++){
-            console.log("in heree");
             if(data.me.followers[i] === props.searchedUser){
-                return <div className = "folowButtonContainer"><button className = "folowButton">Following</button></div>
+                return <div className = "folowButtonContainer"><button style={{ cursor: 'pointer' }} className = "folowButton">Following</button></div>
                 
             }
         }
 
         if(currentStatus === ""){   
-            return <div className = "folowButtonContainer"><button className = "folowButton" onClick = {ToFollowing}>Follow</button></div>
+            return <div className = "folowButtonContainer"><button style={{ cursor: 'pointer' }} className = "folowButton" onClick = {ToFollowing}>Follow</button></div>
         
         }
 
         <h1>hello</h1>
-        console.log(listOfFollowers)
     }
 
     return (
