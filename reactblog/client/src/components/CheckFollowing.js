@@ -38,7 +38,6 @@ function CheckFollowing(props){
 
     }
 
-
     function FindFollowing(){
         for(let i=0;i<data.me.followers.length;i++){
             if(data.me.followers[i] === props.searchedUser){
