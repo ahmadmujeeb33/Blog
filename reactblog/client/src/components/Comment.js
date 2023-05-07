@@ -28,12 +28,9 @@ function Comment(props){
 
     const CommentButton = async (event) => {
         event.preventDefault();
-        console.log("---------------------------")
 
         const todayDate = today.format("MMM Do, YYYY")
-        console.log("todayDate" + todayDate);
 
-        console.log("in thisss2222222 " + props.allData.post.comments)
     
         try {
              await addComment({
