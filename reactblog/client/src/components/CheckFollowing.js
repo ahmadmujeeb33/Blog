@@ -29,7 +29,6 @@ function CheckFollowing(props){
             variables: {_id:data.me._id, follower: props.searchedUser},
         });
 
-
         
         FindFollowing()
           
