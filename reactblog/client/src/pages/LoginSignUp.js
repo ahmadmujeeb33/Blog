@@ -10,7 +10,6 @@ import '../styles/LoginSignUp.css';
 
 function LoginSignUp() {
 
-
     return (
         <div>
             <div className = "loginContainer">
