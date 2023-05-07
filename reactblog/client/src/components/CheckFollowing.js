@@ -33,7 +33,6 @@ function CheckFollowing(props){
         
         FindFollowing()
           
-
     }
 
     function FindFollowing(){
