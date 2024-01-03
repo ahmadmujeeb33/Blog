@@ -7,16 +7,21 @@
     align-items: center;
 
 }
+
+.SearchContainer h2 {
+    text-align: center;
+}
+
+.SearchContainer textarea {
+    width: 33%;
+}
+
 .SearchItems{
-    background-color: lightskyblue;
+    background-color:  #AED9E0;
     display: flex;
     justify-content: center;
     flex-direction: column;
     width: 50%;
-}
-
-.SearchItems input{
-    height: 20px;
 }
 
 .folowButton{

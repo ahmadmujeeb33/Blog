@@ -19,12 +19,6 @@ function SpecificPost(){
         variables: {_id:id},
     });
 
- 
-
-   
-
-
-
     return (
         <div className = "SpecificPostContainer">
              {loading ? (

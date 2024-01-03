@@ -11,3 +11,7 @@ mongoose.connect(
 );
 
 module.exports = mongoose.connection;
+
+
+
+// mongodb+srv://ahmadmujeeb333:<password>@cluster0.mr0lanb.mongodb.net/

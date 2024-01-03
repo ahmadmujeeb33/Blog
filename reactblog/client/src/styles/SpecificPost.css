@@ -11,10 +11,16 @@
 }
 
 .CommentContainer{
-    display: flex;
-    background-color: gray;
+    background-color:   #D8B56B;
     margin-top: 20px;
-    justify-content: space-between;
+}
+
+.CommentContainer p {
+    font-weight: bold;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding-top: 10px;
+
 }
 
 .CommentInput{
@@ -24,6 +30,7 @@
 
 #CommentButton{
     width: 130px;
+    cursor: pointer;
 }
 
 .CommentInfo{

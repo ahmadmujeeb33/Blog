@@ -51,33 +51,35 @@ function Search(){
         <div>
             <div className = "SearchContainer">
                 <div className = "SearchItems">
-                <p>Search for a user</p>
-                <input
-                    name = "userName"
-                    value = {userInfo.userName}
-                    onChange = {userNameChange}
-                
-                ></input>
-                {loading ? (
-                <div>Loading...</div>
-            ):(
-                <div>
-                    {userFound.current
-                        ? <div>
-                            <div className = "folowButtonContainer">
-                                <h3>{data.user.userName}</h3>
-                            </div>
-                            <CheckFollowing searchedUser = {data.user.userName}  />
-                        </div>
+                    <h2>Search for a user</h2>
+                    <div style= {{"textAlign": "center"}}>
+                        <textarea
+                            name = "userName"
+                            value = {userInfo.userName}
+                            onChange = {userNameChange}
                         
-                        :  <div className = "folowButtonContainer"><h3>No user found with current input</h3></div>
-                    }
-                    
-                </div>
+                        ></textarea>
+                    </div>
+                    {loading ? (
+                    <div>Loading...</div>
+                    ):(
+                        <>
+                            {userFound.current
+                                ? <div>
+                                    <div className = "folowButtonContainer">
+                                        <h3>{data.user.userName}</h3>
+                                    </div>
+                                    <CheckFollowing searchedUser = {data.user.userName}  />
+                                </div>
+                                
+                                :  <div className = "folowButtonContainer"><h3>No user found with current input</h3></div>
+                            }
+                            
+                        </>
 
-            )}
+                    )}
+                </div>
             </div>
-          </div>
 
         </div>
         
