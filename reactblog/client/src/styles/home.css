@@ -1,9 +1,11 @@
+
 .HomeContatiner{
-    background-color:#ade8f4;
+    background-color:#F2F2F2;;
     min-height: 100vh;
     padding: 0;
     display: flex;
     justify-content: center;
+    
     
 }
 

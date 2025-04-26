@@ -8,7 +8,7 @@ function Home() {
     return (
         <div>
             <div className = "HomeContatiner">
-                    <p>Social Media Blog</p>  
+                <p>Social Media Blog</p>  
             </div>  
         </div>
     )
