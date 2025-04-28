@@ -3,6 +3,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar';
 
+
 //IMPORT PAGES
 import Home  from './pages/Home';
 // import About  from './pages/About';
@@ -50,6 +51,7 @@ const client = new ApolloClient({
 
 function App() {
   return (
+    
     <ApolloProvider client={client}>
       <BrowserRouter basename={process.env.PUBLIC_URL}>
       <div>

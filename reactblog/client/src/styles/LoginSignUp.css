@@ -1,39 +1,27 @@
+
+.login-container{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+ }
+
+
 .loginContainer{
     background-color: #ECECEC;
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    
+   
+        
 }
 
 .loginContainerItems{
-    margin-top: 50px;
-    display: flex;
-    flex-direction: row;
-    gap: 350px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
-.inputContainer{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+
+
+.signup-container{
+    padding: 20px;
 }
 
-.inputContainer input{
-    line-height: 2em;
-    width: 300px;
-    border-radius: 5px;
-}
 
-.inputContainer button{
-    height: 30px;
-    background-color: pink;
-    border: 2px solid black;
- 
-}
-
-.inputContainer h4 {
-    font-size: 130%;
-    color: blueviolet;
-    font-weight: bold;
-}

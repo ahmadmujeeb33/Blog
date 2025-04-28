@@ -22,11 +22,11 @@ function TheNavbar() {
                 <div>
                     <div className = "menu-bar">
                         <div className = "menu-bar-items">
-                            <Link  to="/" style={{ textDecoration: 'none' }}>Home</Link>
-                            <Link  to="/Dashboard" style={{ textDecoration: 'none' }}>Dashboard</Link>
-                            <Link  to="/Search" style={{ textDecoration: 'none' }}>Search</Link>
-                            <Link  to="/Following" style={{ textDecoration: 'none' }}>Following</Link>
-                            <Link  to="" onClick={logout} style={{ textDecoration: 'none' }} >Logout</Link>   
+                            <Link className="items" to="/" style={{ textDecoration: 'none' }}>Home</Link>
+                            <Link className="items" to="/Dashboard" style={{ textDecoration: 'none' }}>Dashboard</Link>
+                            <Link className="items" to="/Search" style={{ textDecoration: 'none' }}>Search</Link>
+                            <Link className="items" to="/Following" style={{ textDecoration: 'none' }}>Following</Link>
+                            <Link className="items" to="" onClick={logout} style={{ textDecoration: 'none' }} >Logout</Link>   
                         </div>
                     </div>               
                 </div>
