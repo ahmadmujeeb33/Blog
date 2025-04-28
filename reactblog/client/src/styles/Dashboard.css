@@ -1,5 +1,5 @@
 .DashboardContainer{
-    background-color: #fff8e7;
+    background-color:#F2F2F2;;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -47,11 +47,12 @@
 }
 
 .FullContainer button{
-    background-color:#f8edeb;
-    height: 30px;
+    font-weight: bold;
+    font-size: xx-large;
     
 }
 
-.FullContainer button Link{
-    color: #94d2bd;
+.button-container{
+    text-align: center;
 }
+

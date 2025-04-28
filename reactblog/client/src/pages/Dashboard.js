@@ -35,7 +35,12 @@ function Dashboard() {
                                 <br></br>
                             </div>   
                 })}
-                <button><Link style={{ textDecoration: 'none' }} to="/NewPost" className="btn btn-primary">Create Post</Link></button>
+                <div className="button-container">
+                    <button>
+                        <h1><Link style={{ textDecoration: 'none' }} to="/NewPost" className="btn btn-primary">Create Post</Link>
+                        </h1>
+                    </button>
+                </div>
             </div>
         )}
         </div>
