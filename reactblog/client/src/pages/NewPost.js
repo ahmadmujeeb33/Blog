@@ -20,8 +20,6 @@ function NewPost() {
 
     const [addPost, { error1, data1 }] = useMutation(ADD_POST);
    
-     
-    
 
     function PostChange(event){
         const name = event.target.name;
@@ -48,10 +46,10 @@ function NewPost() {
     }
 
     return (
-        <div>
+        <>
             <div className = "NewPostContainer">
                 <div className = "NewPostItems">
-                    <h3>Create New Post</h3>
+                    <h1>Create New Post</h1>
                     <div className = "inputItems">
                         <p style={{fontWeight:'bold'}}>Title</p>
                         <textarea
@@ -72,12 +70,17 @@ function NewPost() {
                         ></textarea>
                         
                     </div>
-                    <button id = "createButton" style={{ cursor: 'pointer' }} onClick = {PostButton}><Link style={{ textDecoration: 'none' }} to="/NewPost" >Create</Link></button>
-                </div>
 
-                
+                    <button 
+                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
+                        type="submit"
+                        onClick = {PostButton}
+                        >
+                        <Link style={{ textDecoration: 'none' }} to="/NewPost" >Create</Link>
+                    </button>
+                </div>
             </div>
-        </div>
+        </>
     )
 
 }

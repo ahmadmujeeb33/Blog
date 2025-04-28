@@ -1,42 +1,40 @@
+
+
 .NewPostContainer{
-    background-color: paleturquoise;
+    background-color: #ECECEC;
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    padding-top: 50px;
 
 }
 
 .NewPostItems{
     width: 50%;
-    height: 220px;
     display: flex;
     flex-direction: column;
-    gap: 0px;
-    justify-content: center;
-    padding-top: 50px;
+    gap: 10px;
     
 }
 
-.NewPostItems h3{
-    color: white;
-    height: 40px;
-    color: blue;
-    
+.NewPostItems h1{
+    height: 40px;    
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+    font-size: x-large;
+    padding-bottom: 10px;
 }
 
 .inputItems{
-    background-color:lightblue;
     display: flex;
     justify-content: center;
     flex-direction: column;
+    text-align: center;
+    gap: 15px;
 }
-
-
 
 .NewPostItems button{
     margin-top: 30px;
-    background-color: lightcyan;
     cursor: pointer;
 }
 

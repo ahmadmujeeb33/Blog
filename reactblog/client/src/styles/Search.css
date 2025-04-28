@@ -1,5 +1,5 @@
 .SearchContainer{
-    background-color: lightyellow;
+    background-color: #ECECEC;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -17,7 +17,6 @@
 }
 
 .SearchItems{
-    background-color:  #AED9E0;
     display: flex;
     justify-content: center;
     flex-direction: column;
