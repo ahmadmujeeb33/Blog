@@ -21,13 +21,20 @@
     justify-content: center;
     flex-direction: column;
     width: 50%;
+    gap: 20px;
 }
 
-.folowButton{
-    background-color: lightskyblue;
+.SearchItems h2{
+  font-weight: bold;
+  font-size: xx-large;
 }
 
 .folowButtonContainer{
     display: flex;
     justify-content: center;
+}
+
+
+.folowButton {
+    background-color: aqua;
 }

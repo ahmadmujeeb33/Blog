@@ -66,13 +66,11 @@ function Search(){
                         <>
                             {userFound.current
                                 ? <div>
-                                    <div className = "folowButtonContainer">
-                                        <h3>{data.user.userName}</h3>
-                                    </div>
+                                    
                                     <CheckFollowing searchedUser = {data.user.userName}  />
                                 </div>
                                 
-                                :  <div className = "folowButtonContainer"><h3>No user found with current input</h3></div>
+                                :  null
                             }
                             
                         </>

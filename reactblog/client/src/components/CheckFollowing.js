@@ -37,13 +37,30 @@ function CheckFollowing(props){
     function FindFollowing(){
         for(let i=0;i<data.me.followers.length;i++){
             if(data.me.followers[i] === props.searchedUser){
-                return <div className = "folowButtonContainer"><button style={{ cursor: 'pointer' }} className = "folowButton">Following</button></div>
+                return <div className = "folowButtonContainer">
+                    <button 
+                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
+                        type="submit"
+                        >
+                     Following!
+                    </button>
+                </div>
                 
             }
         }
 
         if(currentStatus === ""){   
-            return <div className = "folowButtonContainer"><button style={{ cursor: 'pointer' }} className = "folowButton" onClick = {ToFollowing}>Follow</button></div>
+            return <div className = "folowButtonContainer">
+
+            <button 
+              onClick = {ToFollowing}
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
+              type="submit"
+            >
+              Click To Follow!
+            </button>
+                
+            </div>
         
         }
 
