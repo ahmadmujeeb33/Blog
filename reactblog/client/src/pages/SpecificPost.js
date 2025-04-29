@@ -35,7 +35,6 @@ function SpecificPost(){
                   </div>
                 </div>
 
-                <h4>Comments</h4>
                 {data.post.comments.map((currentData)=>{
                         
                         return   <div>

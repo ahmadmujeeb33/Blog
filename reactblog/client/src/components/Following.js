@@ -17,10 +17,9 @@ function Following(props){
                 <div>Loading...</div>
              ):(
                 <div className = "allFollowing">
-                        <h2>{data._id}</h2>
                         <Link style={{ textDecoration: 'none' }} to={`/CurentUser/${data.user.userName}`}>
                             <div className = "allFollowingItems">
-                                <p>{props.userName}</p>
+                                <p className="followingName">{props.userName}</p>
                             </div>
                         </Link>
                 </div>

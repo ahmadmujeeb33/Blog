@@ -65,6 +65,7 @@ function Update(props){
                         value = {postInfo.title}
                         onChange ={PostChange}
                         id = "deleteInput"
+                        cols = "70"
                     ></textarea>
                     <p>Content</p>
                     <textarea
@@ -72,6 +73,8 @@ function Update(props){
                         value = {postInfo.content}
                         onChange = {PostChange}
                         id = "contentInput"
+                        rows = "10"
+                        cols = "70"
                     ></textarea>
                 </div>
 

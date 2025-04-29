@@ -59,12 +59,17 @@ function Comment(props){
                     onChange = {CommentChange} 
                     className = "CommentInput"
                     ></textarea>
-                
-                    <button onClick = {CommentButton} type="submit"
-                        id = "CommentButton"
-                    
-                    >Add</button>
-                    
+
+                    <div className="buttonContainer">
+                        <button 
+                        className="bg-sky-500 hover:bg-sky-700 text-white font-semibold text-base py-3 px-6 rounded focus:outline-none focus:shadow-outline" 
+                        type="submit"
+                        onClick={CommentButton}
+                        >
+                        Add Comments
+                        </button>
+
+                    </div>
 
                 </div>
              )}

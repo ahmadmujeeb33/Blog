@@ -1,5 +1,5 @@
 .FollowingContainer{
-    background-color: antiquewhite;
+    background-color: #F2F2F2;
     min-height: 100vh;
     display: flex;
 }
@@ -7,12 +7,21 @@
 .allFollowing{
     display: flex;
     justify-content: center;
-    background-color: lightskyblue;
+    background-color: #e0f0ff;
     width: 100%;
     margin-top: 30px;
+    height: 10vh;
+    align-items: center;
 
 }
 
 .FollowingContainerItems{
     width: 100%;
+    
 }
+
+
+.followingName {
+    font-weight: bold;
+}
+
